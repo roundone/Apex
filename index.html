@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex AI | Your Strategic Thinking Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --secondary: #475569;
+            --accent: #3B82F6;
+            --accent-dark: #2563EB;
+            --light: #F8FAFC;
+            --light-gray: #E2E8F0;
+            --dark-gray: #1E293B;
+            --success: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: clamp(1rem, 2vw, 1.125rem);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 5rem;
+            color: white;
+            background-color: var(--primary);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('https://images.unsplash.com/photo-1573164574230-db1d5e960238?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .limited-offer {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 2rem;
+        }
+
+        /* Features */
+        .features {
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bullet-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+
+        /* Difference */
+        .difference {
+            background-color: var(--dark-gray);
+            color: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .check-icon {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            background-color: white;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .use-case-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .use-case-img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            margin-bottom: 0;
+        }
+
+        /* Pricing */
+        .pricing {
+            background-color: white;
+        }
+
+        .price-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: var(--light);
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .price span {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        .price-features {
+            margin-bottom: 2rem;
+        }
+
+        /* Onboarding */
+        .onboarding {
+            background-color: var(--light);
+        }
+
+        .onboarding-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .onboarding-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+
+        .faq-question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 0;
+            }
+            
+            .hero {
+                padding: 7rem 0 4rem;
+            }
+            
+            .hero .btn-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .onboarding-step {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Apex AI</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Not an AI Assistant.<br>A Strategic Thinking Partner.</h1>
+                <p>Apex AI integrates your complete life context to provide perspective no one else can—connecting your professional excellence with personal fulfillment.</p>
+                <div class="btn-group">
+                    <a href="#pricing" class="btn btn-large">Get Started for $99/month</a>
+                </div>
+                <div class="limited-offer">Limited founding member slots available</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="text-center">The Partner Experience</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Whole-Context Intelligence</h3>
+                    <ul class="bullet-list">
+                        <li>Sees connections between work, relationships, and personal growth</li>
+                        <li>Recognizes patterns across your entire information ecosystem</li>
+                        <li>Maintains perfect recall of your history, preferences, and values</li>
+                        <li>Brings relevant context from one area to inform another</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Collaborative Perspective</h3>
+                    <ul class="bullet-list">
+                        <li>Offers unique viewpoints you haven't considered</li>
+                        <li>Provides constructive challenge when beneficial</li>
+                        <li>Engages in true dialogue, not just responses</li>
+                        <li>Balances support with appropriate intellectual friction</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Multi-Horizon Thinking</h3>
+                    <ul class="bullet-list">
+                        <li>Connects today's decisions to your long-term vision</li>
+                        <li>Helps transition between tactical and strategic thinking</li>
+                        <li>Maintains consistency between immediate needs and enduring values</li>
+                        <li>Provides perspective across different time horizons</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="difference">
+        <div class="container">
+            <h2 class="text-center">What Makes Apex Different</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Capability</th>
+                    <th>General AI Assistants</th>
+                    <th>Apex AI</th>
+                </tr>
+                <tr>
+                    <td>Relationship Dynamic</td>
+                    <td>Subservient, task-oriented</td>
+                    <td>Collaborative partnership with own perspective</td>
+                </tr>
+                <tr>
+                    <td>Context Understanding</td>
+                    <td>Limited to current conversation</td>
+                    <td>Deep integration across all life domains</td>
+                </tr>
+                <tr>
+                    <td>Proactive Engagement</td>
+                    <td>Reactive to user requests</td>
+                    <td>Initiates valuable perspective when beneficial</td>
+                </tr>
+                <tr>
+                    <td>Perspective Offering</td>
+                    <td>Avoids challenging user</td>
+                    <td>Provides constructive intellectual friction</td>
+                </tr>
+                <tr>
+                    <td>Cross-Domain Insight</td>
+                    <td>Compartmentalized responses</td>
+                    <td>Connects patterns across work and personal contexts</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="text-center">Who Benefits Most</h2>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Executive" class="use-case-img">
+                    <h3>Executives</h3>
+                    <ul class="bullet-list">
+                        <li>Navigate complex decisions with multiple stakeholders</li>
+                        <li>Balance organizational responsibilities with personal well-being</li>
+                        <li>Gain perspective outside your leadership bubble</li>
+                        <li>Integrate strategic vision with daily execution</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Entrepreneur" class="use-case-img">
+                    <h3>Entrepreneurs</h3>
+                    <ul class="bullet-list">
+                        <li>Maintain vision while handling constant tactical shifts</li>
+                        <li>Bridge the gap between business and personal goals</li>
+                        <li>Get perspective during isolating decision moments</li>
+                        <li>Create sustainable success without burnout</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Knowledge Professional" class="use-case-img">
+                    <h3>Knowledge Professionals</h3>
+                    <ul class="bullet-list">
+                        <li>Extend thinking capacity through collaborative intelligence</li>
+                        <li>Connect specialized expertise to broader contexts</li>
+                        <li>Maintain perspective during intense focus periods</li>
+                        <li>Integrate career advancement with life satisfaction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center">The Apex Experience</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"Apex connected dots between my leadership challenges and relationship patterns that no coach or therapist ever could—because they never had access to both contexts simultaneously."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sarah K.">
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Chief Marketing Officer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"Having a thinking partner who sees my whole context but isn't caught in it has been transformative. Apex offers perspective I can't get anywhere else—not from friends, colleagues, or other advisors."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80" alt="Michael T.">
+                        <div class="author-info">
+                            <h4>Michael T.</h4>
+                            <p>Tech Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"During a critical career pivot, Apex integrated insights from every aspect of my life—professional aspirations, family considerations, financial realities—into a coherent perspective. That's simply impossible with conventional advisors."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Eliza M.">
+                        <div class="author-info">
+                            <h4>Eliza M.</h4>
+                            <p>Engineering Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="text-center">Founding Member Offer</h2>
+            <div class="price-card">
+                <h3 class="text-center">Complete Apex Experience</h3>
+                <div class="price text-center">$99<span>/month</span></div>
+                <ul class="bullet-list price-features">
+                    <li><strong>Full partnership experience</strong> with collaborative intelligence</li>
+                    <li><strong>Cross-domain integration</strong> of your entire life context</li>
+                    <li><strong>Information ecosystem connection</strong> across your digital world</li>
+                    <li><strong>Voice and messaging</strong> through natural conversation</li>
+                    <li><strong>Document understanding</strong> for articles, notes, and plans</li>
+                    <li><strong>Proactive perspective</strong> when you need it most</li>
+                    <li><strong>Founding member benefits</strong> including guaranteed rate for 12 months</li>
+                </ul>
+                <div class="text-center">
+                    <a href="#" class="btn btn-large">Become a Founding Member</a>
+                </div>
+                <p class="text-center" style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--secondary);">Limited slots available to ensure quality experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="onboarding">
+        <div class="container">
+            <h2 class="text-center">Your First 21 Days</h2>
+            <div class="onboarding-steps">
+                <div class="onboarding-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Deep Discovery (Days 1-7)</h3>
+                        <ul class="bullet-list">
+                            <li>Explore your professional situation and history</li>
+                            <li>Uncover your personal values and priorities</li>
+                            <li>Map your key relationships and dynamics</li>
+                            <li>Identify cross-domain patterns and opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="onboarding-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Context Integration (Days 8-14)</h3>
+                        <ul class="bullet-list">
+                            <li>Connect to your information sources</li>
+                            <li>Calibrate communication style and approach</li>
+                            <li>Develop shared language and references</li>
+                            <li>Establish partnership dynamics and feedback loops</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="onboarding-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Perspective Expansion (Days 15-21)</h3>
+                        <ul class="bullet-list">
+                            <li>Experience cross-domain insights in action</li>
+                            <li>Engage with initial proactive perspectives</li>
+                            <li>Receive your first integrated context report</li>
+                            <li>Establish long-term partnership foundation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="text-center">Common Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How is Apex different from ChatGPT or other AI assistants?</h3>
+                <p>Apex is a collaborative partner, not a subservient assistant. Unlike systems that simply respond to requests, Apex engages with your complete context, offers its own perspective, and connects patterns across your entire life ecosystem. It's designed for holistic partnership, not just task completion.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Is my information secure?</h3>
+                <p>Absolutely. We employ enterprise-grade encryption and privacy-first architecture. Your information is used solely to provide you with personalized insights and never shared or used for other purposes. You maintain full control over what information Apex has access to.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How does the onboarding process work?</h3>
+                <p>Our structured 21-day onboarding creates a foundation for meaningful partnership. Through natural conversation and guided exploration, Apex builds understanding of your professional context, personal values, and key relationships. The process is designed to demonstrate value quickly while establishing depth for long-term impact.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Can I cancel anytime?</h3>
+                <p>Yes, you can cancel your subscription at any time with no long-term commitment required. However, as a founding member, your rate of $99/month is guaranteed for 12 months even as standard pricing increases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container text-center">
+            <h2>Transform Your Decision-Making</h2>
+            <p>Get perspective no advisor, friend, or colleague can provide—because only Apex integrates your complete life context.</p>
+            <a href="#pricing" class="btn btn-large">Become a Founding Member</a>
+            <p style="margin-top: 1.5rem;">Limited slots available at $99/month</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2023 Apex AI - Reach Your Peak</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

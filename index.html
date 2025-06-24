@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #141E46;
-            --secondary-blue: #41B06E;
-            --text-light: #FFF5E0;
-            --text-dark: #333333;
+            --primary-dark: #1A2A4C; /* Deeper Navy */
+            --secondary-blue: #007BFF; /* Brighter, more confident blue */
+            --text-light: #F0F4F8;
+            --text-dark: #212529;
             --bg-light: #FFFFFF;
-            --bg-off-white: #f8f9fa;
+            --bg-off-white: #F8F9FA;
         }
 
         * {
@@ -27,7 +27,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             background-color: var(--bg-light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .container {
@@ -43,7 +43,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e9ecef;
         }
 
         .navbar .container {
@@ -86,7 +86,7 @@
         }
 
         .cta-button:hover {
-            background-color: #359d5f;
+            background-color: #0056b3;
         }
 
         /* --- Hero Section --- */
@@ -133,7 +133,7 @@
         }
         
         .section-header {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 3rem auto;
         }
 
@@ -153,6 +153,7 @@
             padding: 2rem;
             border-radius: 8px;
             flex: 1;
+            border: 1px solid #e9ecef;
         }
 
         .problem-card h3 {
@@ -192,23 +193,25 @@
             background: #fff;
             padding: 1.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
         }
         
         .chat-container {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
         }
 
         .chat-bubble {
             padding: 10px 15px;
             border-radius: 18px;
             margin-bottom: 10px;
-            max-width: 80%;
+            max-width: 85%;
             line-height: 1.4;
         }
 
         .user-bubble {
-            background-color: #e5e5ea;
+            background-color: #e9ecef;
             color: #000;
             margin-left: auto;
             border-bottom-right-radius: 4px;
@@ -229,7 +232,7 @@
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .feature-item {
@@ -344,8 +347,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Unlock Your Professional Potential</h1>
-            <p>Verian is your private, AI-powered executive coach. Navigate daily challenges, build your brand, and accelerate your career with a confidential success partner.</p>
+            <h1>Stop Navigating Your Career Alone</h1>
+            <p>Verian is your private, AI-powered executive coach. Get personalized strategy for your toughest work challenges and accelerate your path to success.</p>
             <form class="email-form" action="#">
                 <input type="email" class="email-input" placeholder="Enter your email address" required>
                 <button type="submit" class="cta-button">Join the Waitlist</button>
@@ -357,8 +360,8 @@
     <section id="problem" class="problem-section">
         <div class="container">
             <div class="section-header">
-                <h2>Navigate the Moments That Define Your Career</h2>
-                <p>The most critical challenges at work happen in private. Free advice is generic, and asking colleagues is risky.</p>
+                <h2>The Moments That Define Your Career Happen in Private</h2>
+                <p>Free advice is generic. Asking colleagues is risky. The most critical professional challenges require a confidential, strategic partner.</p>
             </div>
             <div class="problem-cards">
                 <div class="problem-card">
@@ -382,30 +385,32 @@
         <div class="container">
             <div class="section-header">
                 <h2>Your Daily Partner for Growth</h2>
-                <p>Verian integrates seamlessly into your life, providing strategic support whenever you need it, wherever you are.</p>
+                <p>Verian is always on, available via WhatsApp, Voice, or Email. It learns from every interaction to provide deeply personalized and actionable guidance.</p>
             </div>
             <div class="solution-content">
                 <div class="solution-steps">
                     <div class="step">
                         <h3>1. Chat Confidentially 24/7</h3>
-                        <p>Use WhatsApp or voice to discuss any work challenge, big or small. Your conversations are 100% private and secure.</p>
+                        <p>Start a conversation about any work challenge, big or small. Your discussions are 100% private and secure.</p>
                     </div>
                     <div class="step">
-                        <h3>2. Get AI-Powered Strategy</h3>
-                        <p>Verian doesn't just give advice; it acts as your coach. It asks sharp questions and helps you develop a clear, actionable plan.</p>
+                        <h3>2. Get Personalized AI Strategy</h3>
+                        <p>Verian acts as your coach. It remembers your context, asks sharp questions, and helps you develop a clear, actionable plan.</p>
                     </div>
                     <div class="step">
-                        <h3>3. Achieve Your Goals</h3>
+                        <h3>3. Execute with Confidence</h3>
                         <p>From navigating office politics to building your brand on LinkedIn, Verian provides the tools and support to help you succeed.</p>
                     </div>
                 </div>
                 <div class="solution-mockup">
                     <div class="chat-container">
-                        <div class="chat-bubble verian-bubble">Hi Priya, winding down? How was your day at ShopKart?</div>
-                        <div class="chat-bubble user-bubble">Ugh frustrating. My main project got deprioritized in a big meeting.</div>
-                        <div class="chat-bubble verian-bubble">I hear you. Getting blocked on a key dependency is tough. Okay, let's break this down. What's the business impact if it's delayed?</div>
-                        <div class="chat-bubble user-bubble">We'd miss our Q3 target, and my review is at the end of the quarter.</div>
-                         <div class="chat-bubble verian-bubble">Got it. Stakes are high. We have two levers: Framing or Leverage. Which do you want to pull first?</div>
+                        <div class="chat-bubble verian-bubble">Hi Priya, winding down? How was your day?</div>
+                        <div class="chat-bubble user-bubble">Frustrating. Ravi from Infra just told me the API update is being delayed. Again.</div>
+                        <div class="chat-bubble verian-bubble">I hear you. That's tough, especially after our conversation last month about his team's bandwidth. This blocks your checkout optimization feature, right?</div>
+                        <div class="chat-bubble user-bubble">Exactly. And my sync with Anjali is next week. I can't go in there with a red status.</div>
+                        <div class="chat-bubble verian-bubble">Okay, let's get strategic. A direct confrontation with Ravi won't work. We need to reframe this. What if we position this as a way to *help* him with his own goals?</div>
+                        <div class="chat-bubble user-bubble">How? His only goal is the big data center migration.</div>
+                        <div class="chat-bubble verian-bubble">Perfect. Let's draft a short email to Ravi proposing that your engineers can help document the new API endpoints, which will save his team time post-migration. It shows you're a partner, not just another demand. Ready to try?</div>
                     </div>
                 </div>
             </div>

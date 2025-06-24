@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex AI | Your Strategic Thinking Partner</title>
+    <title>Verian - Your Confidential AI Success Partner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0F172A;
-            --secondary: #475569;
-            --accent: #3B82F6;
-            --accent-dark: #2563EB;
-            --light: #F8FAFC;
-            --light-gray: #E2E8F0;
-            --dark-gray: #1E293B;
-            --success: #10B981;
+            --primary-dark: #141E46;
+            --secondary-blue: #41B06E;
+            --text-light: #FFF5E0;
+            --text-dark: #333333;
+            --bg-light: #FFFFFF;
+            --bg-off-white: #f8f9fa;
         }
 
         * {
@@ -26,782 +24,466 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
             line-height: 1.6;
-            color: var(--primary);
-            background-color: var(--light);
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 20px;
         }
 
-        section {
-            padding: 5rem 0;
-        }
-
-        h1, h2, h3, h4 {
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: clamp(1rem, 2vw, 1.125rem);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.875rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-large {
-            padding: 1rem 2.5rem;
-            font-size: 1.25rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Header */
-        header {
+        /* --- Navigation --- */
+        .navbar {
+            background: var(--bg-light);
             padding: 1.5rem 0;
-            position: absolute;
-            width: 100%;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 0 5rem;
-            color: white;
-            background-color: var(--primary);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
+            position: sticky;
             top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: url('https://images.unsplash.com/photo-1573164574230-db1d5e960238?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.25;
-            z-index: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        .hero .btn-group {
+        .navbar .container {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .limited-offer {
-            display: inline-block;
-            margin-top: 1.5rem;
-            font-size: 0.875rem;
-            padding: 0.5rem 1rem;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 2rem;
-        }
-
-        /* Features */
-        .features {
-            background-color: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .feature-card {
-            background-color: var(--light);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-        }
-
-        .feature-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 50%;
-            background-color: var(--accent);
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .bullet-list {
-            list-style-type: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .bullet-list li {
-            position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .bullet-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background-color: var(--accent);
-        }
-
-        /* Difference */
-        .difference {
-            background-color: var(--dark-gray);
-            color: white;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 1.25rem;
-            text-align: left;
-        }
-
-        .comparison-table th {
-            background-color: rgba(255, 255, 255, 0.1);
-            font-weight: 600;
-        }
-
-        .comparison-table tr:nth-child(even) td {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .check-icon {
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* Use Cases */
-        .use-cases {
-            background-color: white;
-        }
-
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .use-case-card {
-            padding: 2rem;
-            border-radius: 1rem;
-            background-color: var(--light);
-            transition: all 0.3s ease;
-        }
-
-        .use-case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-        }
-
-        .use-case-img {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--light);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-        }
-
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .testimonial-author img {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-
-        .author-info h4 {
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info p {
-            font-size: 0.875rem;
-            color: var(--secondary);
-            margin-bottom: 0;
-        }
-
-        /* Pricing */
-        .pricing {
-            background-color: white;
-        }
-
-        .price-card {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: var(--light);
-            border-radius: 1rem;
-            padding: 3rem 2rem;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .price-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-        }
-
-        .price {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .price span {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            font-weight: 400;
-        }
-
-        .price-features {
-            margin-bottom: 2rem;
-        }
-
-        /* Onboarding */
-        .onboarding {
-            background-color: var(--light);
-        }
-
-        .onboarding-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .onboarding-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background-color: var(--accent);
-            color: white;
-            font-weight: 600;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .step-content {
-            flex-grow: 1;
-        }
-
-        .step-content h3 {
-            margin-bottom: 0.75rem;
-        }
-
-        /* FAQ */
-        .faq {
-            background-color: white;
-        }
-
-        .faq-item {
-            margin-bottom: 2rem;
-        }
-
-        .faq-question {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        /* CTA */
-        .cta {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: white;
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-links {
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
             display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            background-color: var(--secondary-blue);
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #359d5f;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+        
+        .hero .email-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .hero .email-input {
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        /* --- Problem Section --- */
+        .problem-section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .section-header {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-cards {
+            display: flex;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .problem-card {
+            background: var(--bg-off-white);
+            padding: 2rem;
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* --- Solution / How it Works Section --- */
+        .solution-section {
+            padding: 5rem 0;
+            background: var(--bg-off-white);
+        }
+
+        .solution-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .solution-steps {
+            flex: 1;
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+        }
+        
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .solution-mockup {
+            flex: 1;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .chat-container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .chat-bubble {
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .user-bubble {
+            background-color: #e5e5ea;
+            color: #000;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .verian-bubble {
+            background-color: var(--secondary-blue);
+            color: white;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* --- Features Section --- */
+        .features-section {
+            padding: 5rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
             gap: 1.5rem;
         }
-
-        .footer-links a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        
+        .feature-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
-        .footer-links a:hover {
-            color: white;
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Responsive Adjustments */
+        /* --- Testimonial Section --- */
+        .testimonial-section {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-content img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--secondary-blue);
+        }
+        
+        .testimonial-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author span {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* --- Final CTA Section --- */
+        .final-cta-section {
+            padding: 5rem 0;
+            background: var(--bg-off-white);
+            text-align: center;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            section {
-                padding: 4rem 0;
+            .navbar .nav-links {
+                display: none; /* Simple hiding for mobile */
             }
-            
-            .hero {
-                padding: 7rem 0 4rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .hero .btn-group {
+            .problem-cards, .solution-content {
                 flex-direction: column;
             }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .onboarding-step {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">Apex AI</a>
-        </div>
-    </header>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Verian</a>
+            <ul class="nav-links">
+                <li><a href="#problem">The Challenge</a></li>
+                <li><a href="#solution">How It Works</a></li>
+                <li><a href="#features">Why Verian?</a></li>
+            </ul>
+            <a href="#final-cta" class="cta-button">Get Early Access</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Not an AI Assistant.<br>A Strategic Thinking Partner.</h1>
-                <p>Apex AI integrates your complete life context to provide perspective no one else can—connecting your professional excellence with personal fulfillment.</p>
-                <div class="btn-group">
-                    <a href="#pricing" class="btn btn-large">Get Started for $99/month</a>
-                </div>
-                <div class="limited-offer">Limited founding member slots available</div>
-            </div>
+            <h1>Unlock Your Professional Potential</h1>
+            <p>Verian is your private, AI-powered executive coach. Navigate daily challenges, build your brand, and accelerate your career with a confidential success partner.</p>
+            <form class="email-form" action="#">
+                <input type="email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="cta-button">Join the Waitlist</button>
+            </form>
         </div>
     </section>
 
-    <section class="features">
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
         <div class="container">
-            <h2 class="text-center">The Partner Experience</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Whole-Context Intelligence</h3>
-                    <ul class="bullet-list">
-                        <li>Sees connections between work, relationships, and personal growth</li>
-                        <li>Recognizes patterns across your entire information ecosystem</li>
-                        <li>Maintains perfect recall of your history, preferences, and values</li>
-                        <li>Brings relevant context from one area to inform another</li>
-                    </ul>
+            <div class="section-header">
+                <h2>Navigate the Moments That Define Your Career</h2>
+                <p>The most critical challenges at work happen in private. Free advice is generic, and asking colleagues is risky.</p>
+            </div>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <h3>Difficult Conversations</h3>
+                    <p>How do you push back on a deadline, give constructive feedback, or manage a difficult stakeholder without damaging relationships? Get the right words and strategy, every time.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Collaborative Perspective</h3>
-                    <ul class="bullet-list">
-                        <li>Offers unique viewpoints you haven't considered</li>
-                        <li>Provides constructive challenge when beneficial</li>
-                        <li>Engages in true dialogue, not just responses</li>
-                        <li>Balances support with appropriate intellectual friction</li>
-                    </ul>
+                <div class="problem-card">
+                    <h3>High-Stakes Meetings</h3>
+                    <p>Walk into every leadership meeting with confidence. Verian helps you prepare a sharp narrative, anticipate tough questions, and articulate your value clearly.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Multi-Horizon Thinking</h3>
-                    <ul class="bullet-list">
-                        <li>Connects today's decisions to your long-term vision</li>
-                        <li>Helps transition between tactical and strategic thinking</li>
-                        <li>Maintains consistency between immediate needs and enduring values</li>
-                        <li>Provides perspective across different time horizons</li>
-                    </ul>
+                <div class="problem-card">
+                    <h3>Career Strategy</h3>
+                    <p>Don't leave your promotion to chance. Proactively build your case, prepare for performance reviews, and identify the key skills you need to reach the next level.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="difference">
+    <!-- Solution / How It Works Section -->
+    <section id="solution" class="solution-section">
         <div class="container">
-            <h2 class="text-center">What Makes Apex Different</h2>
-            <table class="comparison-table">
-                <tr>
-                    <th>Capability</th>
-                    <th>General AI Assistants</th>
-                    <th>Apex AI</th>
-                </tr>
-                <tr>
-                    <td>Relationship Dynamic</td>
-                    <td>Subservient, task-oriented</td>
-                    <td>Collaborative partnership with own perspective</td>
-                </tr>
-                <tr>
-                    <td>Context Understanding</td>
-                    <td>Limited to current conversation</td>
-                    <td>Deep integration across all life domains</td>
-                </tr>
-                <tr>
-                    <td>Proactive Engagement</td>
-                    <td>Reactive to user requests</td>
-                    <td>Initiates valuable perspective when beneficial</td>
-                </tr>
-                <tr>
-                    <td>Perspective Offering</td>
-                    <td>Avoids challenging user</td>
-                    <td>Provides constructive intellectual friction</td>
-                </tr>
-                <tr>
-                    <td>Cross-Domain Insight</td>
-                    <td>Compartmentalized responses</td>
-                    <td>Connects patterns across work and personal contexts</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="use-cases">
-        <div class="container">
-            <h2 class="text-center">Who Benefits Most</h2>
-            <div class="use-case-grid">
-                <div class="use-case-card">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Executive" class="use-case-img">
-                    <h3>Executives</h3>
-                    <ul class="bullet-list">
-                        <li>Navigate complex decisions with multiple stakeholders</li>
-                        <li>Balance organizational responsibilities with personal well-being</li>
-                        <li>Gain perspective outside your leadership bubble</li>
-                        <li>Integrate strategic vision with daily execution</li>
-                    </ul>
-                </div>
-                
-                <div class="use-case-card">
-                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Entrepreneur" class="use-case-img">
-                    <h3>Entrepreneurs</h3>
-                    <ul class="bullet-list">
-                        <li>Maintain vision while handling constant tactical shifts</li>
-                        <li>Bridge the gap between business and personal goals</li>
-                        <li>Get perspective during isolating decision moments</li>
-                        <li>Create sustainable success without burnout</li>
-                    </ul>
-                </div>
-                
-                <div class="use-case-card">
-                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Knowledge Professional" class="use-case-img">
-                    <h3>Knowledge Professionals</h3>
-                    <ul class="bullet-list">
-                        <li>Extend thinking capacity through collaborative intelligence</li>
-                        <li>Connect specialized expertise to broader contexts</li>
-                        <li>Maintain perspective during intense focus periods</li>
-                        <li>Integrate career advancement with life satisfaction</li>
-                    </ul>
-                </div>
+            <div class="section-header">
+                <h2>Your Daily Partner for Growth</h2>
+                <p>Verian integrates seamlessly into your life, providing strategic support whenever you need it, wherever you are.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="text-center">The Apex Experience</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-content">"Apex connected dots between my leadership challenges and relationship patterns that no coach or therapist ever could—because they never had access to both contexts simultaneously."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sarah K.">
-                        <div class="author-info">
-                            <h4>Sarah K.</h4>
-                            <p>Chief Marketing Officer</p>
-                        </div>
+            <div class="solution-content">
+                <div class="solution-steps">
+                    <div class="step">
+                        <h3>1. Chat Confidentially 24/7</h3>
+                        <p>Use WhatsApp or voice to discuss any work challenge, big or small. Your conversations are 100% private and secure.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Get AI-Powered Strategy</h3>
+                        <p>Verian doesn't just give advice; it acts as your coach. It asks sharp questions and helps you develop a clear, actionable plan.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Achieve Your Goals</h3>
+                        <p>From navigating office politics to building your brand on LinkedIn, Verian provides the tools and support to help you succeed.</p>
                     </div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-content">"Having a thinking partner who sees my whole context but isn't caught in it has been transformative. Apex offers perspective I can't get anywhere else—not from friends, colleagues, or other advisors."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80" alt="Michael T.">
-                        <div class="author-info">
-                            <h4>Michael T.</h4>
-                            <p>Tech Entrepreneur</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-content">"During a critical career pivot, Apex integrated insights from every aspect of my life—professional aspirations, family considerations, financial realities—into a coherent perspective. That's simply impossible with conventional advisors."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Eliza M.">
-                        <div class="author-info">
-                            <h4>Eliza M.</h4>
-                            <p>Engineering Director</p>
-                        </div>
+                <div class="solution-mockup">
+                    <div class="chat-container">
+                        <div class="chat-bubble verian-bubble">Hi Priya, winding down? How was your day at ShopKart?</div>
+                        <div class="chat-bubble user-bubble">Ugh frustrating. My main project got deprioritized in a big meeting.</div>
+                        <div class="chat-bubble verian-bubble">I hear you. Getting blocked on a key dependency is tough. Okay, let's break this down. What's the business impact if it's delayed?</div>
+                        <div class="chat-bubble user-bubble">We'd miss our Q3 target, and my review is at the end of the quarter.</div>
+                         <div class="chat-bubble verian-bubble">Got it. Stakes are high. We have two levers: Framing or Leverage. Which do you want to pull first?</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <!-- Features Section -->
+    <section id="features" class="features-section">
         <div class="container">
-            <h2 class="text-center">Founding Member Offer</h2>
-            <div class="price-card">
-                <h3 class="text-center">Complete Apex Experience</h3>
-                <div class="price text-center">$99<span>/month</span></div>
-                <ul class="bullet-list price-features">
-                    <li><strong>Full partnership experience</strong> with collaborative intelligence</li>
-                    <li><strong>Cross-domain integration</strong> of your entire life context</li>
-                    <li><strong>Information ecosystem connection</strong> across your digital world</li>
-                    <li><strong>Voice and messaging</strong> through natural conversation</li>
-                    <li><strong>Document understanding</strong> for articles, notes, and plans</li>
-                    <li><strong>Proactive perspective</strong> when you need it most</li>
-                    <li><strong>Founding member benefits</strong> including guaranteed rate for 12 months</li>
-                </ul>
-                <div class="text-center">
-                    <a href="#" class="btn btn-large">Become a Founding Member</a>
-                </div>
-                <p class="text-center" style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--secondary);">Limited slots available to ensure quality experience</p>
+            <div class="section-header">
+                <h2>More Than an App. A Strategic Advantage.</h2>
+                <p>Verian is built on a foundation of principles that generic tools can't match.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="onboarding">
-        <div class="container">
-            <h2 class="text-center">Your First 21 Days</h2>
-            <div class="onboarding-steps">
-                <div class="onboarding-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Deep Discovery (Days 1-7)</h3>
-                        <ul class="bullet-list">
-                            <li>Explore your professional situation and history</li>
-                            <li>Uncover your personal values and priorities</li>
-                            <li>Map your key relationships and dynamics</li>
-                            <li>Identify cross-domain patterns and opportunities</li>
-                        </ul>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1529612453802-7f52b5a90059?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400" alt="Privacy">
+                    <div>
+                        <h3>Absolute Privacy</h3>
+                        <p>Your career ambitions and work challenges are yours alone. Our B2C model means we only answer to you, not your employer. Your data is never shared.</p>
                     </div>
                 </div>
-                
-                <div class="onboarding-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Context Integration (Days 8-14)</h3>
-                        <ul class="bullet-list">
-                            <li>Connect to your information sources</li>
-                            <li>Calibrate communication style and approach</li>
-                            <li>Develop shared language and references</li>
-                            <li>Establish partnership dynamics and feedback loops</li>
-                        </ul>
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1523474253046-80064c094fd2?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400" alt="Personalization">
+                    <div>
+                        <h3>Deep Personalization</h3>
+                        <p>Verian knows your history, your goals, and your communication style. The advice gets smarter and more tailored with every conversation, becoming a compounding asset for your career.</p>
                     </div>
                 </div>
-                
-                <div class="onboarding-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Perspective Expansion (Days 15-21)</h3>
-                        <ul class="bullet-list">
-                            <li>Experience cross-domain insights in action</li>
-                            <li>Engage with initial proactive perspectives</li>
-                            <li>Receive your first integrated context report</li>
-                            <li>Establish long-term partnership foundation</li>
-                        </ul>
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400" alt="Proactive Support">
+                    <div>
+                        <h3>Proactive Support</h3>
+                        <p>Connect your calendar and get timely nudges to prepare for big meetings. Verian works in the background to ensure you're always one step ahead.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400" alt="Brand Building">
+                    <div>
+                        <h3>Build Your Brand</h3>
+                        <p>Turn your accomplishments into powerful thought leadership. Verian helps you craft compelling LinkedIn posts and internal updates that get you noticed.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq">
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
         <div class="container">
-            <h2 class="text-center">Common Questions</h2>
-            <div class="faq-item">
-                <h3 class="faq-question">How is Apex different from ChatGPT or other AI assistants?</h3>
-                <p>Apex is a collaborative partner, not a subservient assistant. Unlike systems that simply respond to requests, Apex engages with your complete context, offers its own perspective, and connects patterns across your entire life ecosystem. It's designed for holistic partnership, not just task completion.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">Is my information secure?</h3>
-                <p>Absolutely. We employ enterprise-grade encryption and privacy-first architecture. Your information is used solely to provide you with personalized insights and never shared or used for other purposes. You maintain full control over what information Apex has access to.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">How does the onboarding process work?</h3>
-                <p>Our structured 21-day onboarding creates a foundation for meaningful partnership. Through natural conversation and guided exploration, Apex builds understanding of your professional context, personal values, and key relationships. The process is designed to demonstrate value quickly while establishing depth for long-term impact.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">Can I cancel anytime?</h3>
-                <p>Yes, you can cancel your subscription at any time with no long-term commitment required. However, as a founding member, your rate of $99/month is guaranteed for 12 months even as standard pricing increases.</p>
+            <div class="testimonial-content">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400" alt="Priya S.">
+                <p class="testimonial-quote">"Verian helped me structure the argument that got my project green-lit when it was about to be shelved. It's like having a top-tier strategy consultant on call 24/7. An absolute game-changer for my confidence and effectiveness."</p>
+                <p class="testimonial-author">Priya S. <br><span>Senior Product Manager at a leading E-commerce company</span></p>
             </div>
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container text-center">
-            <h2>Transform Your Decision-Making</h2>
-            <p>Get perspective no advisor, friend, or colleague can provide—because only Apex integrates your complete life context.</p>
-            <a href="#pricing" class="btn btn-large">Become a Founding Member</a>
-            <p style="margin-top: 1.5rem;">Limited slots available at $99/month</p>
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="final-cta-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Accelerate Your Career?</h2>
+                <p>You don't have to navigate your professional journey alone. Join the exclusive waitlist for early access and be the first to experience Verian.</p>
+            </div>
+             <form class="email-form" action="#">
+                <input type="email" class="email-input" placeholder="your.email@company.com" required>
+                <button type="submit" class="cta-button">Get My Early Access</button>
+            </form>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2023 Apex AI - Reach Your Peak</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
+            <a href="#" class="logo" style="color: var(--text-light);">Verian</a>
+            <p style="margin-top: 1rem;">© 2025 Verian. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
